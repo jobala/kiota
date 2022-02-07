@@ -35,22 +35,22 @@ func NewCompressionHandler() *CompressionHandler {
 
 // NewCompressionHandlerWithOptions creates an instance of the compression middlerware with
 // specified configurations.
-func NewCompressionHandlerWithOptions(option CompressionOptions) *CompressionHandler {
+func NewCompressionHandlerWithOptions(option *CompressionOptions) *CompressionHandler {
 	return &CompressionHandler{options: option}
 }
 
 // NewCompressionOptions creates a configuration object for the CompressionHandler
-func NewCompressionOptions(enableCompression bool) CompressionOptions {
-	return CompressionOptions{enableCompression: enableCompression}
+func NewCompressionOptions(enableCompression bool) *CompressionOptions {
+	return &CompressionOptions{enableCompression: enableCompression}
 }
 
 // GetKey returns CompressionOptions unique name in context object
-func (o CompressionOptions) GetKey() abstractions.RequestOptionKey {
+func (o *CompressionOptions) GetKey() abstractions.RequestOptionKey {
 	return compressKey
 }
 
 // ShouldCompress reads compression setting form CompressionOptions
-func (o CompressionOptions) ShouldCompress() bool {
+func (o *CompressionOptions) ShouldCompress() bool {
 	return o.enableCompression
 }
 
