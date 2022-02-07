@@ -12,7 +12,7 @@ import (
 
 // CompressionHandler represents a compression middleware
 type CompressionHandler struct {
-	options CompressionOptions
+	options *CompressionOptions
 }
 
 // CompressionOptions is a configuration object for the CompressionHandler middleware
