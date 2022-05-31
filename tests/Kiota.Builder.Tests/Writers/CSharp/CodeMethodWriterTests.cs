@@ -273,7 +273,7 @@ public class CodeMethodWriterTests : IDisposable {
             },
             IsStatic = true,
         }).First();
-        factoryMethod.AddDiscriminatorMapping("ns.childmodel", new CodeType {
+        factoryMethod.DiscriminatorInformation.AddDiscriminatorMapping("ns.childmodel", new CodeType {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
@@ -319,7 +319,7 @@ public class CodeMethodWriterTests : IDisposable {
             },
             IsStatic = true,
         }).First();
-        factoryMethod.AddDiscriminatorMapping("ns.childmodel", new CodeType {
+        factoryMethod.DiscriminatorInformation.AddDiscriminatorMapping("ns.childmodel", new CodeType {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
@@ -356,7 +356,7 @@ public class CodeMethodWriterTests : IDisposable {
             },
             IsStatic = true,
         }).First();
-        factoryMethod.AddDiscriminatorMapping("ns.childmodel", new CodeType {
+        factoryMethod.DiscriminatorInformation.AddDiscriminatorMapping("ns.childmodel", new CodeType {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
