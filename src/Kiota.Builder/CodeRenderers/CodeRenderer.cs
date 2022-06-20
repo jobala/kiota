@@ -39,6 +39,7 @@ namespace Kiota.Builder.CodeRenderers
                     case CodeEnum:
                     case CodeFunction:
                     case CodeInterface:
+                        Console.WriteLine("Generating file : "+ writer.PathSegmenter.GetPath(root, codeElement));
                         await RenderCodeNamespaceToSingleFileAsync(writer, codeElement, writer.PathSegmenter.GetPath(root, codeElement), cancellationToken);
                         break;
                     case CodeNamespace codeNamespace:
