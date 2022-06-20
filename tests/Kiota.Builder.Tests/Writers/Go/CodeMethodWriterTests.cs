@@ -303,7 +303,7 @@ public class CodeMethodWriterTests : IDisposable {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
-        factoryMethod.DiscriminatorPropertyName = "@odata.type";
+        factoryMethod.DiscriminatorInformation.DiscriminatorPropertyName = "@odata.type";
         factoryMethod.AddParameter(new CodeParameter {
             Name = "parseNode",
             Kind = CodeParameterKind.ParseNode,
@@ -356,7 +356,7 @@ public class CodeMethodWriterTests : IDisposable {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
-        factoryMethod.DiscriminatorPropertyName = "@odata.type";
+        factoryMethod.DiscriminatorInformation.DiscriminatorPropertyName = "@odata.type";
         writer.Write(factoryMethod);
         var result = tw.ToString();
         Assert.DoesNotContain("mappingValueNode, err := parseNode.GetChildNode(\"@odata.type\")", result);
@@ -397,7 +397,7 @@ public class CodeMethodWriterTests : IDisposable {
                         Name = "childModel",
                         TypeDefinition = childModel,
                     });
-        factoryMethod.DiscriminatorPropertyName = string.Empty;
+        factoryMethod.DiscriminatorInformation.DiscriminatorPropertyName = string.Empty;
         factoryMethod.AddParameter(new CodeParameter {
             Name = "parseNode",
             Kind = CodeParameterKind.ParseNode,
@@ -438,7 +438,7 @@ public class CodeMethodWriterTests : IDisposable {
             },
             IsStatic = true,
         }).First();
-        factoryMethod.DiscriminatorPropertyName = "@odata.type";
+        factoryMethod.DiscriminatorInformation.DiscriminatorPropertyName = "@odata.type";
         factoryMethod.AddParameter(new CodeParameter {
             Name = "parseNode",
             Kind = CodeParameterKind.ParseNode,
